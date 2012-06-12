@@ -1,0 +1,1 @@
+Well, this blog thing has begun. Lets see how long it lasts.
