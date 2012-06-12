@@ -1,3 +1,11 @@
+title : Mark Costello
+
+author :
+  name : Mark Costello
+  email : mark@markcostello.net
+  github : mcos
+  twitter : mjcos
+
 markdown: rdiscount
 pygments: true
 permalink: pretty
