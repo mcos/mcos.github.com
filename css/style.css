@@ -1,35 +1,41 @@
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 	font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
-	font-size: 18px;
 }
+
 .container { 
 	background: #fff;
 	width:620px; 
   	margin-left: auto;
   	margin-right: auto;
 }
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 1em 0;
+}
+
+div.title {
+    border-bottom: 1px solid gray;
+}
+
 /* Posts */
 
 article {
     display: block;
-    font-family: Georgia, serif;
     line-height: 1.6;
-    margin-top: 3em;
+    font-size: 16px;
+    margin-top: 1em;
+    margin-bottom: 4em;
 }
 
-    article header { color: #888; }
-    article header p { margin: 0; }
-    article header a { text-decoration: none; }
-
-/* Link posts */
-
-article.link header h2 { font-size: 1.25em; }
-
-article.link header h2 a,
-article.link header h2 a:active,
-article.link header h2 a:visited { 
-    color: #b5190e;
-    text-decoration: underline; 
+article header { color: #888; }
+article header p { margin: 0; }
+article header a { 
+    font-size: 18px;
 }
+

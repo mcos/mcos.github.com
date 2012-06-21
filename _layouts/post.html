@@ -1,23 +1,24 @@
 ---
 layout: default
 ---
-<link rel="stylesheet" href="/css/style.css">
-<div class='container'>
-<article>
-	<header>
-		<p>
-			{% if page.ref_url %}
-    <a class="reference" href="{{ page.ref_url }}">{{ page.title }}</a>
-  {% else %}
-<a href="{{ page.url }}">
-    {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
-</a>
-  {% endif %}
-		</p>
-		<p>
-		{{ page.date | date_to_string }}
-		</p>
-	</header>
-{{ content }}
-</article>
-</div>
+<section id="articles">
+  <article>
+    <header>
+      <p>
+        {% if page.ref_url %}
+          <a class="reference" href="{{ page.ref_url }}">{{ page.title }}</a>
+        {% else %}
+          <a href="{{ page.url }}">
+            {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
+          </a>
+        {% endif %}
+      </p>
+      <p>
+        <time datetime="{{ page.date }}" pubdate="pubdate">{{ page.date | date_to_string }}</time> &bull; <a href="{{ page.url }}">#</a>
+      </p>
+    </header>
+    <p>
+      {{ content }}
+    </p>
+  </article>
+</section>
