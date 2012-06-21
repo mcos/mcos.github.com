@@ -3,17 +3,21 @@ layout: default
 ---
 <link rel="stylesheet" href="/css/style.css">
 <div class='container'>
-<h3 class="entry-title">
-  {% if page.ref_url %}
+<article>
+	<header>
+		<p>
+			{% if page.ref_url %}
     <a class="reference" href="{{ page.ref_url }}">{{ page.title }}</a>
   {% else %}
 <a href="{{ page.url }}">
     {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
 </a>
   {% endif %}
-</h3>
-<h4>{{ page.date | date_to_string }}</h4>
-<div id="post">
+		</p>
+		<p>
+		{{ page.date | date_to_string }}
+		</p>
+	</header>
 {{ content }}
-</div>
+</article>
 </div>

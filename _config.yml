@@ -3,8 +3,8 @@ title : Mark Costello
 author :
   name : Mark Costello
   email : mark@markcostello.net
-  github : mcos
-  twitter : mjcos
+  github : http://github.com/mcos
+  twitter : http://twitter.com/mjcos
 
 markdown: rdiscount
 pygments: true
