@@ -3,8 +3,14 @@ layout: default
 ---
 <link rel="stylesheet" href="/css/style.css">
 <div class='container'>
-### [{{ page.title }}]({{ page.url }})
-#### {{ page.date | date_to_string }}
+<h1 class="entry-title">
+  {% if page.ref_url %}
+    <a class="reference" href="{{ page.ref_url }}">{{ page.title }}</a>
+  {% else %}
+    {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
+  {% endif %}
+</h1>
+<h4>{{ page.date | date_to_string }}</h4>
 <div id="post">
 {{ content }}
 </div>
