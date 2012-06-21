@@ -36,4 +36,4 @@ Here's the final conversion code I used:
 	utcusertimestamp = usertimestamp.astimezone(utc)
 	return utcusertimestamp
 
-Let's hope this bug doesn't rear it's head again when the clocks go back in later this year!
+Let's hope this bug doesn't rear it's head again when the clocks go back later this year!
