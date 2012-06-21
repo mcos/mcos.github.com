@@ -6,6 +6,5 @@ author :
   github : http://github.com/mcos
   twitter : http://twitter.com/mjcos
 
-markdown: rdiscount
 pygments: true
 permalink: pretty
