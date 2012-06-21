@@ -11,10 +11,12 @@ So, here is what I ran into: I was converting from the user's timezone to UTC. T
 
 Here's the interesting part, when I did this:
 {% highlight python %}
-	timestamp = datetime.strptime(input_timestamp, TIME_FORMAT)
-	usertimestamp = timestamp.replace(tzinfo=usertz)
-	utcusertimestamp = usertimestamp.astimezone(utc)
-	return utcusertimestamp
+
+timestamp = datetime.strptime(input_timestamp, TIME_FORMAT)
+usertimestamp = timestamp.replace(tzinfo=usertz)
+utcusertimestamp = usertimestamp.astimezone(utc)
+return utcusertimestamp
+
 {% endhighlight %}
 	
 I kept getting times that were off by one hour - i.e. they weren't taking into account Daylight Saving Time.
@@ -22,22 +24,26 @@ I kept getting times that were off by one hour - i.e. they weren't taking into a
 It turns out that the following line was the problem:
 
 {% highlight python %}
-	usertimestamp = timestamp.replace(tzinfo=usertz)
+
+usertimestamp = timestamp.replace(tzinfo=usertz)
+
 {% endhighlight %}
 	
 Doing a replace of the timezone information on in the datetime object doesn't actually take into account Daylight Saving Time (<http://en.wikipedia.org/wiki/Daylight_saving_time/>). It turns out that I needed to do the conversion this way instead:
 
 {% highlight python %}
-	usertimestamp = usertz.localize(timestamp)
+
+usertimestamp = usertz.localize(timestamp)
+
 {% endhighlight %}
 		
 Here's the final conversion code I used:
 
 {% highlight python %}
-	timestamp = datetime.strptime(input_timestamp, TIME_FORMAT)
-	usertimestamp = usertz.localize(timestamp)
-	utcusertimestamp = usertimestamp.astimezone(utc)
-	return utcusertimestamp
+timestamp = datetime.strptime(input_timestamp, TIME_FORMAT)
+usertimestamp = usertz.localize(timestamp)
+utcusertimestamp = usertimestamp.astimezone(utc)
+return utcusertimestamp
 {% endhighlight %}
 
 Let's hope this bug doesn't rear it's head again when the clocks go back later this year!
