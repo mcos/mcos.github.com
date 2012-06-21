@@ -3,9 +3,6 @@ layout: post
 title: Interesting Python Timezone Behaviour
 ---
 
-### [{{ page.title }}]({{ page.url }})
-#### {{ page.date | date_to_string }}
-
 I had some interesting behaviour crop up in my code today. I was debugging a service I wrote for our application at work where users can schedule updates to be sent to their social media sites (Twitter, Facebook and LinkedIn). 
 
 Quick note for anyone working with dates, times and timezones: you should always use UTC (<http://en.wikipedia.org/wiki/Coordinated_Universal_Time/>) as the standard timezone for all time-sensitive operations.
