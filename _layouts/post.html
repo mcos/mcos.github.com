@@ -6,7 +6,7 @@ layout: default
     <header>
       <p>
         {% if page.ref_url %}
-          <a class="reference" href="{{ page.ref_url }}">{{ page.title }}</a>
+          <span class="reflinkarrow">→</span> <a class="reference" href="{{ page.ref_url }}">{{ page.title }}</a>
         {% else %}
           <a href="{{ page.url }}">
             {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
